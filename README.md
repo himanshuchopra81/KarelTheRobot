@@ -19,4 +19,3 @@ turnRight()
 while fontIsClear
 	move()
 turnLeft()
-}

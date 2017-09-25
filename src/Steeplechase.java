@@ -2,53 +2,35 @@ import stanford.karel.*;
 public class Steeplechase extends Karel {
 	public void run() {
 		for(int i=0; i<8; i++) {
-			moveForward();
+			if(frontIsClear()) {
+				move();
+			}
+			else {
+				jump();
+			}
 			
 		}
-	
-		
-	}
-	public void moveForward() {
-		//&& rightIsBlocked()
-		if(frontIsClear() ) {
-			move();
-			
-		}
-		else
-		jump();
-		
-	}
-	public void moveDown() {
-		if(rightIsClear()) {
-			turnRight();
-			
-		}
-		
 	}
 	public void jump() {
-		turnLeft();
-		while(rightIsBlocked()) {
-		move();}
+		if(leftIsClear())
+			turnLeft();
+		while(rightIsBlocked())
+			move();
+//		turnRight();
+		//going down
+//		if(frontIsClear())
+//			move();
+		//
 		turnRight();
-		while(rightIsClear())
-		move();
-		//down
-		turnRight();
-		
+		while(frontIsClear())
+			move();
+		/* end of jump -- reached the ground
+		//turnLeft();
+			*/
 	}
-	
 	public void turnRight() {
 		turnLeft();
 		turnLeft();
 		turnLeft();
-		
 	}
-	/*
-	 
-	  
-	  
-	  
-	  
-	  
-	 * */
 }
