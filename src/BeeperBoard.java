@@ -20,7 +20,6 @@ public class BeeperBoard extends Karel {
 			}
 			move();
 		}
-		System.out.println(i);
 		//this condition will not let karel take a U turn when it is on the last row
 		if(i!=8) {
 			takeATurn();
