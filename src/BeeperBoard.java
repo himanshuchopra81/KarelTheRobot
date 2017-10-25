@@ -2,14 +2,14 @@ import stanford.karel.Karel;
 
 public class BeeperBoard extends Karel {
 	int i;
-	//run() method is the initial method that is invoked when the program is excuted
+	//run() method is the initial method that is invoked when the program is executed
 	public void run(){
 		//this for loop indicates the number of moves per number of rows- as we have 8 rows
 		for(i = 1; i<=8; i++) {
 			runToEnd();
 		}
 	}
-	//this method will make Karel move till the end of the map or world
+	//this method will make Karel move till the end of the map or world 
 	public void runToEnd() {
 		int count=0;
 		while(!frontIsBlocked()) {
