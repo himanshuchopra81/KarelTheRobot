@@ -2,13 +2,10 @@ import stanford.karel.*;
 public class Steeplechase extends Karel {
 	public void run() {
 		for(int i=0; i<8; i++) {
-			if(frontIsClear()) {
+			if(frontIsClear())
 				move();
-			}
-			else {
-				jump();
-			}
-			
+			else 
+				jump();		
 		}
 	}
 	public void jump() {
@@ -16,17 +13,13 @@ public class Steeplechase extends Karel {
 			turnLeft();
 		while(rightIsBlocked())
 			move();
-//		turnRight();
-		//going down
-//		if(frontIsClear())
-//			move();
-		//
+		turnRight();
+		if(frontIsClear())
+			move();
 		turnRight();
 		while(frontIsClear())
 			move();
-		/* end of jump -- reached the ground
-		//turnLeft();
-			*/
+		turnLeft();
 	}
 	public void turnRight() {
 		turnLeft();
